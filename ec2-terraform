@@ -1,0 +1,15 @@
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIA5Z6H7HOT7D5WYH45"
+  secret_key = "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"
+}
+resource "aws_s3_bucket" "new" {
+  bucket = "cloudcham-bucket4,cloudcham-bucket2, cloudcham-bucket3"
+  count = 3
+
+  tags = {
+    Name        = "cloudcham"
+    Environment = "Dev"
+  }
+
+}
